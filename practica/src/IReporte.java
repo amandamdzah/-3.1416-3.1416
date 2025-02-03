@@ -99,7 +99,7 @@ class Frame extends JFrame {
         } else if (type.equals("General")) {
             JTextArea textArea = new JTextArea(20, 30);
             JScrollPane scroll = new JScrollPane(textArea);
-            scroll.setBounds(100,30,600,250);
+            scroll.setBounds(100,30,600,150);
             //panel.add(textArea);
             JLabel label1 = new JLabel("Ci del representante:");
             JLabel label2 = new JLabel("Equipos:");

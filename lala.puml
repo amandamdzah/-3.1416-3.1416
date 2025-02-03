@@ -1,0 +1,43 @@
+@startuml lala diagram
+
+class TurnOnDevices{
+    + main(String[] args)
+    +turnOnDevice(Connectable device)
+}
+class Connectable <<interface>>{
+    +turnOn():void
+    +turnOff():void
+    +isOn():boolean
+}
+class Lamp{
+    -state:Boolean
+    +turnOn():void
+    +turnOff():void
+    +isOn():boolean
+}
+class Computer{
+    -state:Boolean
+    +turnOn():void
+    +turnOff():void
+    +isOn():boolean
+}
+class CoffeeMaker{
+    -state:Boolean
+    +off()
+    +on()
+    isOff()
+}
+class CoffeeMakerAdapter{
+    -c:CoffeeMaker
+    +turnOn():void
+    +turnOff():void
+    +isOn():boolean
+}
+hide circle
+hide empty members
+TurnOnDevices-right->Connectable
+Connectable<|-- Lamp
+Connectable<|--Computer
+Connectable<|--CoffeeMaker
+CoffeeMakerAdapter*--CoffeeMaker
+@enduml
